@@ -1,0 +1,458 @@
+/* ==========================================================================
+   Jazeela Makeup Studio - Professional Beauty Parlour Stylesheet
+   Theme: Deep Plum, Soft Mauve, Champagne Beige
+   ========================================================================== */
+
+/* --- 1. Custom Properties (Theme Variables) --- */
+:root {
+  --plum: #421b33;
+  --plum-dark: #2d1122;
+  --mauve: #9b637d;
+  --mauve-soft: #ecdde4;
+  --beige-bg: #faf6f0;
+  --beige-warm: #f2e7db;
+  --card-bg: #ffffff;
+  --text-main: #36242e;
+  --text-muted: #6e5462;
+  --border: #e4d6c9;
+  --shadow: 0 4px 15px rgba(66, 27, 51, 0.08);
+  --shadow-hover: 0 8px 22px rgba(66, 27, 51, 0.14);
+  --radius: 8px;
+  --transition: 0.25s ease;
+}
+
+/* --- 2. CSS Reset & Base Rules --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--beige-bg);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Offset anchor scrolling so sticky navbar does not obscure section headings */
+section[id] {
+  scroll-margin-top: 76px;
+}
+
+/* --- 3. Layout Utilities --- */
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 56px 0;
+}
+
+.section-title {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 34px;
+}
+
+.section-title h2 {
+  font-size: 1.85rem;
+  color: var(--plum);
+  margin-bottom: 8px;
+}
+
+.section-title p {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+/* Alternating subtle background for clear visual rhythm */
+.about,
+.gallery,
+.appointment {
+  background-color: var(--beige-warm);
+}
+
+/* --- 4. Navigation Bar --- */
+.navbar {
+  background-color: var(--beige-warm);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+}
+
+.brand {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--plum);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-main);
+  margin-left: 20px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--mauve);
+}
+
+/* --- 5. Hero Section --- */
+.hero {
+  padding: 64px 0;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  color: var(--plum);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero-text p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 26px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-image {
+  flex: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+/* --- 6. Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color var(--transition), transform var(--transition), border-color var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: var(--plum);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--plum-dark);
+}
+
+.btn-secondary {
+  background-color: var(--mauve-soft);
+  color: var(--plum);
+  border-color: var(--border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--beige-warm);
+}
+
+/* --- 7. Service & Info Cards --- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.service-card,
+.why-item,
+.contact-card {
+  background-color: var(--card-bg);
+  padding: 24px 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.service-card {
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.service-card h3,
+.why-item h3,
+.contact-card h3 {
+  color: var(--plum);
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.service-card p,
+.why-item p,
+.contact-card p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+/* --- 8. Gallery Grid --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.02);
+}
+
+/* --- 9. Why Choose Us --- */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+/* --- 10. Appointment Form --- */
+.form-wrapper {
+  max-width: 580px;
+  background-color: var(--card-bg);
+  padding: 34px 28px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--plum);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  background-color: var(--beige-bg);
+  color: var(--text-main);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 6px;
+}
+
+/* --- 11. Contact Section --- */
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.contact-link,
+.footer-tel {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.contact-link:hover,
+.footer-tel:hover {
+  color: var(--mauve);
+}
+
+/* --- 12. Footer --- */
+.footer {
+  background-color: var(--plum);
+  color: #ffffff;
+  padding: 40px 0 26px;
+  text-align: center;
+}
+
+.footer-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.footer-location {
+  font-size: 0.9rem;
+  color: var(--mauve-soft);
+  margin-bottom: 16px;
+}
+
+.footer-links a {
+  color: var(--mauve-soft);
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 0.9rem;
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.copyright {
+  margin-top: 18px;
+  font-size: 0.85rem;
+  color: var(--mauve-soft);
+}
+
+/* --- 13. Accessible Keyboard Focus & Reduced Motion --- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--plum);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* --- 14. Responsive Media Queries --- */
+@media (max-width: 860px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .services-grid,
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-grid,
+  .contact-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .nav-content {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links a {
+    margin: 0 6px;
+    font-size: 0.9rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .services-grid,
+  .gallery-grid,
+  .why-grid,
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .form-wrapper {
+    padding: 24px 18px;
+  }
+
+  .footer-links a {
+    display: inline-block;
+    margin: 4px 8px;
+  }
+}
